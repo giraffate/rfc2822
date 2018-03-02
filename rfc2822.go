@@ -2,6 +2,7 @@ package rfc2822
 
 import (
 	"encoding/base64"
+	"time"
 )
 
 const (
@@ -9,6 +10,8 @@ const (
 
 	ISO2022 = "ISO-2022-JP"
 	UTF8    = "UTF-8"
+
+	DateFormat = "Mon, 02 Jan 2006 15:04:05 -0700"
 )
 
 type Message struct {
@@ -30,4 +33,10 @@ func (m *Message) Parse() string {
 func EncodeRFC2047(charset string, b []byte) string {
 	s := base64.StdEncoding.EncodeToString(b)
 	return "=?" + charset + "?B?" + s + "?="
+}
+
+// FormatDate formats time.Time in RFC 2822 date format,
+// "Mon, 02 Jan 2006 15:04:05 -0700".
+func FormatDate(t time.Time) string {
+	return t.Format(DateFormat)
 }

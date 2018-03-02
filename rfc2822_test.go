@@ -1,8 +1,8 @@
 package rfc2822
 
 import (
-	"fmt"
 	"testing"
+	"time"
 )
 
 func TestEncodeRFC2047(t *testing.T) {
@@ -11,5 +11,14 @@ func TestEncodeRFC2047(t *testing.T) {
 
 	if s != expected {
 		t.Errorf("Failed encode: expected %s, got %s", expected, s)
+	}
+}
+
+func TestFormatDate(t *testing.T) {
+	s := FormatDate(time.Date(2009, time.November, 10, 23, 0, 0, 0, time.UTC))
+	expected := "Tue, 10 Nov 2009 23:00:00 +0000"
+
+	if s != expected {
+		t.Errorf("Failed format date: expected %s, got %s", expected, s)
 	}
 }
