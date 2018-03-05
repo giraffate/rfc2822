@@ -19,7 +19,7 @@ type Message struct {
 	Body    string
 }
 
-func (m *Message) Parse() string {
+func (m *Message) Create() string {
 	message := ""
 	for k, v := range m.Headers {
 		message += k + ": " + v + CRLF

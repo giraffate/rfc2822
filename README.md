@@ -11,7 +11,7 @@ func main() {
 	body := "<html><body>test</body><html>"
 	m := rfc2822.Message{Headers: headers, Body: body}
 
-	fmt.Println(m.Parse())
+	fmt.Println(m.Create())
 }
 ```
 ```
@@ -33,7 +33,7 @@ func main() {
 	body := "<html><body>test</body><html>"
 	m := rfc2822.Message{Headers: headers, Body: body}
 
-	fmt.Println(m.Parse())
+	fmt.Println(m.Create())
 }
 ```
 ```
