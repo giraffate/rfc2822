@@ -5,8 +5,8 @@ import (
 	"time"
 )
 
-func TestEncodeRFC2047(t *testing.T) {
-	s := EncodeRFC2047(UTF8, []byte("テスト"))
+func TestEncode(t *testing.T) {
+	s := Encode(UTF8, []byte("テスト"))
 	expected := "=?UTF-8?B?44OG44K544OI?="
 
 	if s != expected {

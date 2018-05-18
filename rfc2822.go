@@ -30,7 +30,7 @@ func (m *Message) Create() string {
 
 // EncodeRFC2047 encode not-ASCII header,
 // following RFC 2047 (base64).
-func EncodeRFC2047(charset string, b []byte) string {
+func Encode(charset string, b []byte) string {
 	s := base64.StdEncoding.EncodeToString(b)
 	return "=?" + charset + "?B?" + s + "?="
 }

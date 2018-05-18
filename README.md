@@ -27,7 +27,7 @@ Use no-ASCII header
 func main() {
 	headers := map[string]string{
 		"From":         "Sample",
-		"Subject":      rfc2822.EncodeRFC2047(rfc2822.UTF8, []byte("テスト")),
+		"Subject":      rfc2822.Encode(rfc2822.UTF8, []byte("テスト")),
 		"Content-Type": "text/html; charset=UTF-8",
 	}
 	body := "<html><body>test</body><html>"
